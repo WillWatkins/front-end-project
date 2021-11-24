@@ -10,9 +10,9 @@ export const getCategories = () => {
   });
 };
 
-export const getReviews = ({ category }) => {
+export const getReviews = (category) => {
   return ncGamesApi.get("/reviews").then(({ data }) => {
-    if (category.length < 1) return data.reviews;
+    if (category === "") return data.reviews;
     else {
       return data.reviews.filter((review) => {
         return review.category === category;
@@ -21,8 +21,12 @@ export const getReviews = ({ category }) => {
   });
 };
 
-export const updateVote = (reviewId, vote) => {
-  return ncGamesApi.patch(`/reviews/${reviewId}`, vote).then(({ data }) => {
-    console.log(data);
+export const getReviewById = (reviewId) => {
+  return ncGamesApi.get(`/reviews/${reviewId}`).then(({ data }) => {
+    return data.review;
   });
+};
+
+export const updateVote = (reviewId, vote) => {
+  return ncGamesApi.patch(`/reviews/${reviewId}`, vote);
 };

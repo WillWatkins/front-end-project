@@ -4,9 +4,9 @@ import { Games } from "./Games";
 import { useEffect, useState } from "react";
 import { getCategories } from "../utils/apis";
 
-export const Reviews = () => {
+export const Reviews = ({ setReviewId }) => {
   const [categories, setCategories] = useState([]);
-  const [category, setCategory] = useState([]);
+  const [category, setCategory] = useState("");
   useEffect(() => {
     getCategories(category).then((retrievedCategories) => {
       setCategories(retrievedCategories);
@@ -16,7 +16,7 @@ export const Reviews = () => {
     <>
       <Header title="Games" />
       <Nav categories={categories} setCategory={setCategory}></Nav>
-      <Games category={category}></Games>
+      <Games category={category} setReviewId={setReviewId}></Games>
     </>
   );
 };

@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/apis";
 import { Votes } from "./Votes";
+import { Link } from "react-router-dom";
 
-export const Games = (category) => {
+export const Games = ({ category, setReviewId }) => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    getReviews(category).then((retrievedReviews) => {
-      setReviews(retrievedReviews);
-      console.log(retrievedReviews);
-    });
+    setIsLoading(true);
+    getReviews(category)
+      .then((retrievedReviews) => {
+        setIsLoading(false);
+        setReviews(retrievedReviews);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err);
+      });
   }, [category]);
 
+  if (isLoading) return <p>Loading...</p>;
   return (
     <main>
       <ul className="reviewsList">
@@ -26,7 +36,15 @@ export const Games = (category) => {
               />
               <h3 className="ReviewTextContainer">{review.review_body}</h3>
               <Votes reviewVotes={review.votes} reviewId={review.review_id} />
-              <h4 className="Comments">View Comments</h4>
+              <Link
+                className="Comments"
+                to="/comments"
+                onClick={() => {
+                  setReviewId(review.review_id);
+                }}
+              >
+                Comments 💬
+              </Link>
             </li>
           );
         })}
