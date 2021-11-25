@@ -2,30 +2,50 @@
   text-align: center;
   min-height: 100vh;
   color: #f2f2f2;
-  background-color: #c2aff0;
+  background-color: #f2f2f2;
+  font-family: "Barlow Condensed", sans-serif;
 }
 * {
   padding: 0px;
   margin: 0px;
 }
 Header {
-  background-color: #ff1053;
+  background-color: #333;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "Home HeaderTitle User";
+  align-items: center;
+}
+.Home {
+  grid-area: Home;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: x-large;
+}
+.HeaderTitle {
+  grid-area: HeaderTitle;
+}
+.User {
+  grid-area: User;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: x-large;
 }
 .filter {
-  background-color: #3c7a89;
+  background-color: #333;
   overflow: scroll;
   padding: 3px 0px;
 }
 
 Nav {
-  background-color: #3c7a89;
+  background-color: #333;
   overflow: scroll;
   padding: 3px 0px;
 }
 .navContainer {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: cne;
   width: max-content;
   list-style-type: none;
 }
@@ -33,15 +53,19 @@ Nav {
 .navItem {
   border: 2px solid #fbb13c;
   margin: 2px;
-  padding: 3px;
+  padding: 5px;
   border-radius: 10px;
 }
 
+#Games {
+  display: flex;
+  overflow: scroll;
+}
 .reviewsList {
   padding: 3px;
   display: flex;
   flex-direction: column;
-  background-color: #c2aff0;
+  background-color: #f2f2f2;
 }
 .reviewItemCard {
   display: grid;
@@ -53,7 +77,7 @@ Nav {
     "ReviewImg ReviewImg"
     "ReviewTextContainer ReviewTextContainer"
     "Votes Comments";
-  background-color: #3c7a89;
+  background-color: #333;
   border-radius: 10px;
   border: 2px solid #fbb13c;
   padding: 10px;
@@ -90,6 +114,7 @@ Nav {
   grid-template-areas: "ReviewText";
   border: 2px solid #fbb13c;
   border-radius: 10px;
+  padding: 5px;
 }
 .ReviewText {
   grid-area: ReviewText;
@@ -118,4 +143,52 @@ Nav {
   grid-area: Comments;
   border-radius: 10px;
   text-align: right;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.CommentsContainer {
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.CommentsItemCard {
+  display: grid;
+  grid-template-rows: 30px auto 30px;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "Author"
+    "Body"
+    "Votes";
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #fbb13c;
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+}
+
+.Author {
+  grid-area: Author;
+}
+.Body {
+  grid-area: Body;
+}
+
+.AddComment {
+  border: 2px solid #fbb13c;
+  height: 40px;
+  font-size: x-large;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #333;
+}
+.heading {
+  color: #333;
+}
+
+form {
+  background-color: #333;
+  text-align: center;
 }

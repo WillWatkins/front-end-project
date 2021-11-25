@@ -26,7 +26,7 @@ export const Games = ({ category, setReviewId }) => {
       <ul className="reviewsList">
         {reviews.map((review) => {
           return (
-            <li key={review.title} className="reviewItemCard">
+            <li key={review.review_id} className="reviewItemCard">
               <h4 className="Owner">{review.owner}</h4>
               <h3 className="Title">{review.title}</h3>
               <img
@@ -38,12 +38,13 @@ export const Games = ({ category, setReviewId }) => {
               <Votes reviewVotes={review.votes} reviewId={review.review_id} />
               <Link
                 className="Comments"
-                to="/comments"
+                to={`/reviews/${review.review_id}`}
                 onClick={() => {
                   setReviewId(review.review_id);
                 }}
               >
-                Comments 💬
+                {review.comment_count}{" "}
+                {review.comment_count === 1 ? "Comment" : "Comments"} 💬
               </Link>
             </li>
           );

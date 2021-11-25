@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { updateVote } from "../utils/apis";
+import { updateCommentVote } from "../utils/apis";
 
-export const Votes = ({ reviewVotes, reviewId }) => {
-  const [votes, setVotes] = useState(reviewVotes);
+export const CommentVotes = ({ inputVotes, commentId }) => {
+  const [votes, setCommentVotes] = useState(inputVotes);
 
   return (
     <h4 className="Votes">
       <p
         onClick={() => {
-          updateVote(reviewId, { inc_votes: 1 }).then(() => {
-            setVotes((prevVotes) => {
+          updateCommentVote(commentId, { inc_votes: 1 }).then(() => {
+            setCommentVotes((prevVotes) => {
               return prevVotes + 1;
             });
           });
@@ -20,8 +20,8 @@ export const Votes = ({ reviewVotes, reviewId }) => {
       <p> {votes}</p>
       <p
         onClick={() => {
-          updateVote(reviewId, { inc_votes: -1 }).then(() => {
-            setVotes((prevVotes) => {
+          updateCommentVote(commentId, { inc_votes: -1 }).then(() => {
+            setCommentVotes((prevVotes) => {
               return prevVotes - 1;
             });
           });

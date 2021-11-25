@@ -3,6 +3,7 @@ import { Nav } from "./Nav";
 import { Games } from "./Games";
 import { useEffect, useState } from "react";
 import { getCategories } from "../utils/apis";
+import { AddReview } from "./AddReview";
 
 export const Reviews = ({ setReviewId }) => {
   const [categories, setCategories] = useState([]);
@@ -17,6 +18,7 @@ export const Reviews = ({ setReviewId }) => {
       <Header title="Games" />
       <Nav categories={categories} setCategory={setCategory}></Nav>
       <Games category={category} setReviewId={setReviewId}></Games>
+      <AddReview categories={categories}> </AddReview>
     </>
   );
 };

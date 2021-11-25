@@ -6,13 +6,16 @@ import { useState } from "react";
 
 function App() {
   const [reviewId, setReviewId] = useState("");
-  console.log(reviewId);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Reviews setReviewId={setReviewId} />} />
         <Route
-          path="/comments"
+          path="/reviews"
+          element={<Reviews setReviewId={setReviewId} />}
+        />
+        <Route
+          path="/reviews/:review_id"
           element={<Comments reviewId={reviewId} />}
         ></Route>
       </Routes>
