@@ -210,3 +210,8 @@ main {
   height: 84vh;
   overflow: scroll;
 }
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
