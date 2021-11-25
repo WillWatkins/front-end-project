@@ -7,7 +7,7 @@ export const AddReview = ({ categories }) => {
   if (isHidden) {
     return (
       <footer
-        className="AddComment"
+        className="AddElement"
         onClick={() => {
           setIsHidden(false);
         }}
@@ -19,7 +19,7 @@ export const AddReview = ({ categories }) => {
     return (
       <footer>
         <h4
-          className="AddComment"
+          className="AddElement"
           onClick={() => {
             setIsHidden(true);
           }}

@@ -35,8 +35,8 @@ export const Comments = () => {
   return (
     <>
       <Header title="Comments" />
+      <Filter />
       <main>
-        <Filter />
         <h2 className="heading">Review:</h2>
         <li key={currentReview.title} className="reviewItemCard">
           <h4 className="Owner">{currentReview.owner}</h4>

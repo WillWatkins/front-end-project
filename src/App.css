@@ -9,12 +9,14 @@
   padding: 0px;
   margin: 0px;
 }
+/* HEADER  */
 Header {
   background-color: #333;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: "Home HeaderTitle User";
   align-items: center;
+  height: 5vh;
 }
 .Home {
   grid-area: Home;
@@ -31,12 +33,8 @@ Header {
   text-decoration: none;
   font-size: x-large;
 }
-.filter {
-  background-color: #333;
-  overflow: scroll;
-  padding: 3px 0px;
-}
 
+/* NAV BAR */
 Nav {
   background-color: #333;
   overflow: scroll;
@@ -45,7 +43,7 @@ Nav {
 .navContainer {
   display: flex;
   flex-direction: row;
-  justify-content: cne;
+  height: 5vh;
   width: max-content;
   list-style-type: none;
 }
@@ -57,6 +55,15 @@ Nav {
   border-radius: 10px;
 }
 
+/* FILTER -NOT YET DONE */
+.filter {
+  background-color: #333;
+  overflow: scroll;
+  padding: 3px 0px;
+  height: 5vh;
+}
+
+/* REVIEWS */
 #Games {
   display: flex;
   overflow: scroll;
@@ -121,6 +128,8 @@ Nav {
   display: flex;
   padding: 5px;
 }
+
+/* VOTES  */
 .Votes {
   grid-area: Votes;
   border-radius: 10px;
@@ -139,6 +148,8 @@ Nav {
 .DownVote {
   padding: 0px 5px;
 }
+
+/* COMMENTS */
 .Comments {
   grid-area: Comments;
   border-radius: 10px;
@@ -177,13 +188,16 @@ Nav {
   grid-area: Body;
 }
 
-.AddComment {
+/* FOOTER- ADD REVIEW/COMMENT */
+.AddElement {
   border: 2px solid #fbb13c;
-  height: 40px;
+  height: 5vh;
   font-size: x-large;
   border-radius: 10px 10px 0px 0px;
   background-color: #333;
 }
+
+/* GENERAL */
 .heading {
   color: #333;
 }
@@ -191,4 +205,8 @@ Nav {
 form {
   background-color: #333;
   text-align: center;
+}
+main {
+  height: 84vh;
+  overflow: scroll;
 }
