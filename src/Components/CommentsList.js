@@ -17,6 +17,7 @@ export const CommentsList = ({ reviewId, comments, setComments }) => {
             <li key={comment.comment_id} className="CommentsItemCard">
               <h3 className="Author">{comment.author}</h3>
               <h3
+                hidden={true}
                 onClick={() => {
                   deleteCommentByCommentId(comment.comment_id);
                   setComments((prevComments) => {

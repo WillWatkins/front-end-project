@@ -1,8 +1,10 @@
-import { useState } from "react/cjs/react.development";
+import { useContext, useState } from "react/cjs/react.development";
+import { UserContext } from "../contexts/UserContext";
 import { addComment } from "../utils/apis";
 
 export const AddComment = ({ setComments, review_id }) => {
   const [isHidden, setIsHidden] = useState(true);
+  const { user } = useContext(UserContext);
 
   if (isHidden) {
     return (
@@ -29,9 +31,8 @@ export const AddComment = ({ setComments, review_id }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            const author = document.getElementById("author").value;
             const body = document.getElementById("body").value;
-            const comment = { body, author };
+            const comment = { body, author: user.username };
             addComment(review_id, comment).then((comment) => {
               setComments((currentComments) => {
                 const newCommentsArray = [...currentComments, comment];
@@ -42,12 +43,7 @@ export const AddComment = ({ setComments, review_id }) => {
           }}
         >
           <fieldset>
-            <legend>
-              Input a review with your author name to add a comment
-            </legend>
-            <label htmlFor="author">Author: </label>
-            <input type="text" id="author" name="author" required></input>
-            <br />
+            <legend>Input a review to add a comment</legend>
             <label htmlFor="body">Comment: </label>
             <input type="text" id="body" name="body" required></input>
             <br />

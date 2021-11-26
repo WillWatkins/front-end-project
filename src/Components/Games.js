@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReviews, getUsers } from "../utils/apis";
+import { getReviews } from "../utils/apis";
 import { Votes } from "./Votes";
 import { Link } from "react-router-dom";
 
@@ -19,8 +19,6 @@ export const Games = ({ category, setReviewId }) => {
         console.log(err);
       });
   }, [category]);
-
-  getUsers();
 
   if (isLoading) return <p>Loading...</p>;
   return (

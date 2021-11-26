@@ -53,9 +53,3 @@ export const addComment = (reviewId, comment) => {
 export const deleteCommentByCommentId = (commentId) => {
   return ncGamesApi.delete(`/comments/${commentId}`);
 };
-
-export const getUsers = () => {
-  return ncGamesApi.get("/users").then(({ data }) => {
-    console.log(data.users);
-  });
-};

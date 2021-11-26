@@ -1,8 +1,11 @@
-import { useState } from "react/cjs/react.development";
+import { useContext, useState } from "react/cjs/react.development";
+import { UserContext } from "../contexts/UserContext";
 import { addNewReview } from "../utils/apis";
 
 export const AddReview = ({ categories }) => {
   const [isHidden, setIsHidden] = useState(true);
+
+  const { user } = useContext(UserContext);
 
   if (isHidden) {
     return (
@@ -29,12 +32,16 @@ export const AddReview = ({ categories }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            const owner = document.getElementById("owner").value;
             const title = document.getElementById("review_title").value;
             const review_body = document.getElementById("review_body").value;
-            const designer = document.getElementById("designer").value;
             const category = document.getElementById("category").value;
-            const review = { owner, title, review_body, designer, category };
+            const review = {
+              owner: user.username,
+              title,
+              review_body,
+              designer: user.name,
+              category,
+            };
 
             addNewReview(review);
           }}
@@ -44,9 +51,6 @@ export const AddReview = ({ categories }) => {
               Input a review title, body and select a category to submit a
               review
             </legend>
-            <label htmlFor="owner">Username: </label>
-            <input type="text" id="owner" name="owner" required></input>
-            <br />
             <label htmlFor="review_title">Review Title: </label>
             <input
               type="text"
@@ -62,9 +66,6 @@ export const AddReview = ({ categories }) => {
               name="review_body"
               required
             ></input>
-            <br />
-            <label htmlFor="designer">Name: </label>
-            <input type="text" id="designer" name="designer" required></input>
             <br />
             <label htmlFor="category">Select a category:</label>
             <select id="category" name="category">
