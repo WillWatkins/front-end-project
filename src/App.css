@@ -23,6 +23,7 @@ Header {
   color: #f2f2f2;
   text-decoration: none;
   font-size: x-large;
+  font-weight: bold;
 }
 .HeaderTitle {
   grid-area: HeaderTitle;
@@ -214,7 +215,8 @@ main {
   overflow: scroll;
 }
 
-.sticky {
+.topSticky {
   position: sticky;
   top: 0;
+  background-color: #333;
 }

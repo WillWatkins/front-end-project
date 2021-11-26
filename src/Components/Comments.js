@@ -34,8 +34,10 @@ export const Comments = () => {
   if (err) return <p>{err}</p>;
   return (
     <>
-      <Header title="Comments" />
-      <Filter />
+      <div className="topSticky">
+        <Header title="Comments" />
+        <Filter />
+      </div>
       <main>
         <h2 className="heading">Review:</h2>
         <li key={currentReview.title} className="reviewItemCard">
