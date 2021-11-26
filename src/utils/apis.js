@@ -43,10 +43,13 @@ export const updateCommentVote = (commentId, vote) => {
 };
 
 export const addComment = (reviewId, comment) => {
-  console.log(reviewId, comment);
   return ncGamesApi
     .post(`/reviews/${reviewId}/comments`, comment)
     .then(({ data }) => {
       return data.comment;
     });
+};
+
+export const deleteCommentByCommentId = (commentId) => {
+  return ncGamesApi.delete(`/comments/${commentId}`);
 };

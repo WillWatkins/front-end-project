@@ -168,11 +168,11 @@ Nav {
 .CommentsItemCard {
   display: grid;
   grid-template-rows: 30px auto 30px;
-  grid-template-columns: 100%;
+  grid-template-columns: 95% 5%;
   grid-template-areas:
-    "Author"
-    "Body"
-    "Votes";
+    "Author DeleteButton"
+    "Body Body"
+    "Votes Votes";
   background-color: #333;
   border-radius: 10px;
   border: 2px solid #fbb13c;
@@ -186,6 +186,9 @@ Nav {
 }
 .Body {
   grid-area: Body;
+}
+.DeleteButton {
+  grid-area: DeleteButton;
 }
 
 /* FOOTER- ADD REVIEW/COMMENT */
