@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { deleteCommentByCommentId, getCommentsByReviewId } from "../utils/apis";
 import { CommentVotes } from "../Components/CommentVotes";
+import { UserContext } from "../contexts/UserContext";
 
 export const CommentsList = ({ reviewId, comments, setComments }) => {
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
     getCommentsByReviewId(reviewId).then((retrievedComments) => {
       setComments(retrievedComments);
@@ -17,7 +20,7 @@ export const CommentsList = ({ reviewId, comments, setComments }) => {
             <li key={comment.comment_id} className="CommentsItemCard">
               <h3 className="Author">{comment.author}</h3>
               <h3
-                hidden={true}
+                hidden={user.username === comment.author ? false : true}
                 onClick={() => {
                   deleteCommentByCommentId(comment.comment_id);
                   setComments((prevComments) => {
