@@ -10,6 +10,7 @@ export const Games = ({ category, setReviewId }) => {
 
   const [filter, setFilter] = useState();
   const [sortBy, setSortBy] = useState();
+  console.log(sortBy);
 
   useEffect(() => {
     setIsLoading(true);
