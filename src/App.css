@@ -17,6 +17,8 @@ Header {
   grid-template-areas: "Home HeaderTitle User";
   align-items: center;
   height: 5vh;
+  position: sticky;
+  top: 0;
 }
 .Home {
   grid-area: Home;
@@ -56,12 +58,40 @@ Nav {
   border-radius: 10px;
 }
 
-/* FILTER -NOT YET DONE */
-.filter {
+/* FILTERS and SORT BY*/
+
+.sortFiltContainer {
+  padding: 2px 0px;
+  display: grid;
+  grid-template-columns: 15% 25% 25% 35%;
+  grid-template-areas: "SortBy sortByOptions Filters filterOptions";
   background-color: #333;
+  height: 4vh;
+  font-size: medium;
+  color: #f2f2f2;
+  padding-left: 3px;
+  text-align: left;
+  align-items: center;
+}
+.SortBy {
+  grid-area: SortBy;
+}
+.sortByOptions {
+  grid-area: sortByOptions;
+  display: flex;
+  flex-direction: row;
   overflow: scroll;
-  padding: 3px 0px;
-  height: 5vh;
+  list-style: none;
+}
+.Filters {
+  grid-area: Filters;
+}
+.filterOptions {
+  grid-area: filterOptions;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  overflow: scroll;
 }
 
 /* REVIEWS */
@@ -98,11 +128,12 @@ Nav {
   grid-area: Owner;
   border-radius: 10px;
   align-content: flex-start;
+  font-size: large;
 }
 .Title {
   grid-area: Title;
   border-radius: 10px;
-  font-size: medium;
+  font-size: large;
 }
 .ReviewImg {
   grid-area: ReviewImg;
@@ -113,7 +144,7 @@ Nav {
 }
 
 .ReviewTextContainer {
-  font-size: small;
+  font-size: medium;
   grid-area: ReviewTextContainer;
   overflow: scroll;
   display: grid;
@@ -139,14 +170,18 @@ Nav {
   grid-template-areas: "UpVote Vote DownVote";
   width: fit-content;
   margin: 5px 0px;
+  font-weight: bold;
 }
 .UpVote {
+  grid-area: UpVote;
   padding: 0px 5px;
 }
 .Vote {
+  grid-area: Vote;
   padding: 0px 5px;
 }
 .DownVote {
+  grid-area: DownVote;
   padding: 0px 5px;
 }
 
@@ -157,6 +192,7 @@ Nav {
   text-align: right;
   color: #f2f2f2;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .CommentsContainer {
@@ -199,6 +235,9 @@ Nav {
   font-size: x-large;
   border-radius: 10px 10px 0px 0px;
   background-color: #333;
+
+  position: sticky;
+  bottom: 0;
 }
 
 /* GENERAL */
@@ -210,13 +249,12 @@ form {
   background-color: #333;
   text-align: center;
 }
-main {
+.gamesMain {
   height: 84vh;
   overflow: scroll;
 }
 
-.topSticky {
-  position: sticky;
-  top: 0;
-  background-color: #333;
+.commentsMain {
+  height: 90vh;
+  overflow: scroll;
 }

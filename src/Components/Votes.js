@@ -7,6 +7,7 @@ export const Votes = ({ reviewVotes, reviewId }) => {
   return (
     <h4 className="Votes">
       <p
+        className="UpVote"
         onClick={() => {
           updateVote(reviewId, { inc_votes: 1 }).then(() => {
             setVotes((prevVotes) => {
@@ -17,8 +18,9 @@ export const Votes = ({ reviewVotes, reviewId }) => {
       >
         ⬆{" "}
       </p>
-      <p> {votes}</p>
+      <p className="Vote"> {votes}</p>
       <p
+        className="DownVote"
         onClick={() => {
           updateVote(reviewId, { inc_votes: -1 }).then(() => {
             setVotes((prevVotes) => {

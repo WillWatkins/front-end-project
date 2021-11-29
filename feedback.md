@@ -24,7 +24,7 @@ Please be sure o write your own readme. This site makes it very easy :) https://
 - [✅] Basic styling added
 - [✅] Responsive design
 - [✅] Items aligned
-- [✅] Content legible (not too wide, obstructed, etc) `mostly legible but the text is a tad small`
+- [✅] Content legible (not too wide, obstructed, etc)
 - [✅] Refreshing doesn’t cause an issue on sub-pages
 - [✅] No errors in the console
 - [✅] Votes / Posts / Deletions happen instantly _OR_ give user indication of loading
@@ -36,10 +36,8 @@ Please be sure o write your own readme. This site makes it very easy :) https://
 
 ### Login
 
-​
-
-- [ ] Some indication of who is logged in (this can be hardcoded) `can't seem to see any indication of user and I'm able to do things like delete anyone's comments`
-      ​
+- [✅] Some indication of who is logged in (this can be hardcoded)
+  ​
 
 ### Reviews
 
@@ -61,20 +59,20 @@ Please be sure o write your own readme. This site makes it very easy :) https://
 - [✅] Can vote on comments
 - [ ] Can vote a maximum of once in either direction per page load
 - [✅] Votes are persistent when page is refreshed
-- [ ] Can post new comments, which are persistent `I get a 422 error if I try to post. Maybe double check your BE is set up correctly and able to handle post requests`
-      ​
+- [✅] Can post new comments, which are persistent
+  ​
 
 ### Additional functionality:
 
 ​
 
-- [ ] Can only delete comments of logged in user
+- [✅] Can only delete comments of logged in user
 - [✅] Deleted comments don’t re-appear on re-render/refresh
 - [ ] sort comments by date created / votes
 - [ ] navigate over pages of reviews (if implemented in back-end)
 - [ ] navigate over pages of comments (if implemented in back-end)
 - [ ] filter / display reviews by specific user
-- [ ] post new review `Same 422 error as when trying to post a comment`
+- [✅] post new review
 - [ ] delete logged in user's reviews
       ​
 

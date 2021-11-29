@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { getReviews } from "../utils/apis";
 import { Votes } from "./Votes";
 import { Link } from "react-router-dom";
+import { Filters } from "./Filters";
 
 export const Games = ({ category, setReviewId }) => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [filter, setFilter] = useState();
+  const [sortBy, setSortBy] = useState();
+
   useEffect(() => {
     setIsLoading(true);
-    getReviews(category)
+    getReviews(category, filter)
       .then((retrievedReviews) => {
         setIsLoading(false);
         setReviews(retrievedReviews);
@@ -18,11 +22,12 @@ export const Games = ({ category, setReviewId }) => {
         setIsLoading(false);
         console.log(err);
       });
-  }, [category]);
+  }, [category, filter]);
 
   if (isLoading) return <p>Loading...</p>;
   return (
-    <main>
+    <main className="gamesMain">
+      <Filters setFilter={setFilter} setSortBy={setSortBy} />
       <ul className="reviewsList">
         {reviews.map((review) => {
           return (

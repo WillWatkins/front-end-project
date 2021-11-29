@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReviewById } from "../utils/apis";
 import { CommentsList } from "./CommentsList";
-import { Filter } from "./Filter";
+import { Filters } from "./Filters";
 import { Header } from "./Header";
 import { Votes } from "./Votes";
 import { useParams } from "react-router";
@@ -34,11 +34,9 @@ export const Comments = () => {
   if (err) return <p>{err}</p>;
   return (
     <>
-      <div className="topSticky">
-        <Header title="Comments" />
-        <Filter />
-      </div>
-      <main>
+      <Header title="Comments" />
+      <main className="commentsMain">
+        <Filters></Filters>
         <h2 className="heading">Review:</h2>
         <li key={currentReview.title} className="reviewItemCard">
           <h4 className="Owner">{currentReview.owner}</h4>

@@ -15,10 +15,8 @@ export const Reviews = ({ setReviewId }) => {
   }, [category]);
   return (
     <>
-      <div className="topSticky">
-        <Header title="Games" />
-        <Nav categories={categories} setCategory={setCategory}></Nav>
-      </div>
+      <Header title="Games" />
+      <Nav categories={categories} setCategory={setCategory}></Nav>
       <Games category={category} setReviewId={setReviewId}></Games>
       <AddReview categories={categories}> </AddReview>
     </>

@@ -43,7 +43,7 @@ export const AddComment = ({ setComments, review_id }) => {
           }}
         >
           <fieldset>
-            <legend>Input a review to add a comment</legend>
+            <legend>Input a comment to add to this review</legend>
             <label htmlFor="body">Comment: </label>
             <input type="text" id="body" name="body" required></input>
             <br />
