@@ -3,17 +3,21 @@ import { updateVote } from "../utils/apis";
 
 export const Votes = ({ reviewVotes, reviewId }) => {
   const [votes, setVotes] = useState(reviewVotes);
+  const [trackVote, setTrackVote] = useState(0);
 
   return (
     <h4 className="Votes">
       <p
         className="UpVote"
         onClick={() => {
-          updateVote(reviewId, { inc_votes: 1 }).then(() => {
-            setVotes((prevVotes) => {
-              return prevVotes + 1;
+          if (trackVote < 1) {
+            updateVote(reviewId, { inc_votes: 1 }).then(() => {
+              setVotes((prevVotes) => {
+                return prevVotes + 1;
+              });
             });
-          });
+            setTrackVote((prevValue) => prevValue + 1);
+          }
         }}
       >
         ⬆{" "}
@@ -22,11 +26,14 @@ export const Votes = ({ reviewVotes, reviewId }) => {
       <p
         className="DownVote"
         onClick={() => {
-          updateVote(reviewId, { inc_votes: -1 }).then(() => {
-            setVotes((prevVotes) => {
-              return prevVotes - 1;
+          if (trackVote > -1) {
+            updateVote(reviewId, { inc_votes: -1 }).then(() => {
+              setVotes((prevVotes) => {
+                return prevVotes - 1;
+              });
             });
-          });
+            setTrackVote((prevValue) => prevValue - 1);
+          }
         }}
       >
         ⬇
