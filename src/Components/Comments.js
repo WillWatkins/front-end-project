@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReviewById } from "../utils/apis";
 import { CommentsList } from "./CommentsList";
-import { Filters } from "./Filters";
+// import { Filters } from "./Filters";
 import { Header } from "./Header";
 import { Votes } from "./Votes";
 import { useParams } from "react-router";
@@ -14,6 +14,8 @@ export const Comments = () => {
   const [err, setErr] = useState(null);
 
   const [comments, setComments] = useState([]);
+  // const [order, setOrder] = useState();
+  // const [sort_by, setSort_by] = useState();
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,7 +26,6 @@ export const Comments = () => {
         setCurrentReview(review);
       })
       .catch((err) => {
-        console.log(err);
         setIsLoading(false);
         setErr(err);
       });
@@ -36,7 +37,8 @@ export const Comments = () => {
     <>
       <Header title="Comments" />
       <main className="commentsMain">
-        <Filters></Filters>
+        {/* COMMENTS FILTERS ARE NOT SET UP IN BACKEND YET */}
+        {/* <Filters setOrder={setOrder} setSort_by={setSort_by} /> */}
         <h2 className="heading">Review:</h2>
         <li key={currentReview.title} className="reviewItemCard">
           <h4 className="Owner">{currentReview.owner}</h4>
@@ -58,6 +60,8 @@ export const Comments = () => {
           reviewId={review_id}
           setComments={setComments}
           comments={comments}
+          // order={order}
+          // sort_by={sort_by}
         ></CommentsList>
       </main>
       <AddComment review_id={review_id} setComments={setComments}></AddComment>

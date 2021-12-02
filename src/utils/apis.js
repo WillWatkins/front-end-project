@@ -11,7 +11,6 @@ export const getCategories = () => {
 };
 
 export const getReviews = (category, order, sort_by) => {
-  console.log("INAPI:", order);
   return ncGamesApi
     .get("/reviews", { params: { category, sort_by, order } })
     .then(({ data }) => {
@@ -33,10 +32,13 @@ export const updateVote = (reviewId, vote) => {
   return ncGamesApi.patch(`/reviews/${reviewId}`, vote);
 };
 
-export const getCommentsByReviewId = (reviewId) => {
-  return ncGamesApi.get(`/reviews/${reviewId}/comments`).then(({ data }) => {
-    return data.comments;
-  });
+export const getCommentsByReviewId = (reviewId, order, sort_by) => {
+  console.log(order, sort_by);
+  return ncGamesApi
+    .get(`/reviews/${reviewId}/comments`, { params: { order, sort_by } })
+    .then(({ data }) => {
+      return data.comments;
+    });
 };
 
 export const updateCommentVote = (commentId, vote) => {

@@ -5,27 +5,30 @@ import { Link } from "react-router-dom";
 import { Filters } from "./Filters";
 
 export const Games = ({ category, setReviewId }) => {
-  const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(null);
 
+  const [reviews, setReviews] = useState([]);
   const [order, setOrder] = useState();
   const [sort_by, setSort_by] = useState();
+  console.log("GAMES SORT ORDER: ", sort_by, order);
 
   useEffect(() => {
     setIsLoading(true);
-    console.log("ORDER AND SORT BY:", order, sort_by);
     getReviews(category, order, sort_by)
       .then((retrievedReviews) => {
         setIsLoading(false);
+        setErr(null);
         setReviews(retrievedReviews);
       })
       .catch((err) => {
         setIsLoading(false);
-        console.log(err);
+        setErr(err);
       });
   }, [category, order, sort_by]);
 
   if (isLoading) return <p className="loading">Loading...</p>;
+  if (err) return <p className="loading">{err}</p>;
   return (
     <main className="gamesMain">
       <Filters setOrder={setOrder} setSort_by={setSort_by} />

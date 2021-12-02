@@ -13,6 +13,7 @@ export const Filters = ({ setOrder, setSort_by }) => {
         {sortOptions.map((option) => {
           return (
             <li
+              key={option.desc}
               className="navItem"
               onClick={() => {
                 setSort_by(option.apiRef);
@@ -28,6 +29,7 @@ export const Filters = ({ setOrder, setSort_by }) => {
         {orderOptions.map((option) => {
           return (
             <li
+              key={option}
               className="navItem"
               onClick={() => {
                 setOrder(option);

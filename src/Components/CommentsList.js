@@ -3,7 +3,13 @@ import { deleteCommentByCommentId, getCommentsByReviewId } from "../utils/apis";
 import { CommentVotes } from "../Components/CommentVotes";
 import { UserContext } from "../contexts/UserContext";
 
-export const CommentsList = ({ reviewId, comments, setComments }) => {
+export const CommentsList = ({
+  reviewId,
+  comments,
+  setComments,
+  // order,
+  // sort_by,
+}) => {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
