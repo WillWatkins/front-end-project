@@ -1,61 +1,42 @@
 export const Filters = ({ setOrder, setSort_by }) => {
+  const sortOptions = [
+    { desc: "Date", apiRef: "created_at" },
+    { desc: "Votes", apiRef: "votes" },
+    { desc: "User", apiRef: "owner" },
+    { desc: "Title", apiRef: "title" },
+  ];
+  const orderOptions = ["ASC", "DESC"];
   return (
     <div className="sortFiltContainer">
-      <h3 className="SortBy">Sort By:</h3>
+      <h3 className="SortBy">Sort:</h3>
       <ul className="sortByOptions">
-        <li
-          className="navItem"
-          onClick={() => {
-            setSort_by("created_at");
-          }}
-        >
-          Date
-        </li>
-        <li
-          className="navItem"
-          onClick={() => {
-            setSort_by("votes");
-          }}
-        >
-          Votes
-        </li>
-        <li
-          className="navItem"
-          onClick={() => {
-            setSort_by("owner");
-          }}
-        >
-          User
-        </li>
-        <li
-          className="navItem"
-          onClick={() => {
-            setSort_by("title");
-          }}
-        >
-          Review title
-        </li>
+        {sortOptions.map((option) => {
+          return (
+            <li
+              className="navItem"
+              onClick={() => {
+                setSort_by(option.apiRef);
+              }}
+            >
+              {option.desc}
+            </li>
+          );
+        })}
       </ul>
-      <h3 className="Filters">Order By:</h3>
+      <h3 className="Filters">Order:</h3>
       <ul className="filterOptions">
-        <li
-          className="navItem"
-          key="ASC"
-          onClick={() => {
-            setOrder("ASC");
-          }}
-        >
-          ASC
-        </li>
-        <li
-          className="navItem"
-          key="DESC"
-          onClick={() => {
-            setOrder("DESC");
-          }}
-        >
-          DESC
-        </li>
+        {orderOptions.map((option) => {
+          return (
+            <li
+              className="navItem"
+              onClick={() => {
+                setOrder(option);
+              }}
+            >
+              {option}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

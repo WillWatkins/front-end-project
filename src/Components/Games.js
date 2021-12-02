@@ -25,7 +25,7 @@ export const Games = ({ category, setReviewId }) => {
       });
   }, [category, order, sort_by]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p className="loading">Loading...</p>;
   return (
     <main className="gamesMain">
       <Filters setOrder={setOrder} setSort_by={setSort_by} />

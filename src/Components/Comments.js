@@ -30,8 +30,8 @@ export const Comments = () => {
       });
   }, [review_id]);
 
-  if (isLoading) return <p>Loading content...</p>;
-  if (err) return <p>{err}</p>;
+  if (isLoading) return <p className="loading">Loading content...</p>;
+  if (err) return <p className="loading">{err}</p>;
   return (
     <>
       <Header title="Comments" />

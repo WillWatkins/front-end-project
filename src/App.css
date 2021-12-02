@@ -57,13 +57,17 @@ Nav {
   padding: 5px;
   border-radius: 10px;
 }
+.navItem :active {
+  color: red;
+  background-color: #fbb13c;
+}
 
 /* FILTERS and SORT BY*/
 
 .sortFiltContainer {
   padding: 2px 0px;
   display: grid;
-  grid-template-columns: 15% 25% 25% 35%;
+  grid-template-columns: 10% 50% 13% 25%;
   grid-template-areas: "SortBy sortByOptions Filters filterOptions";
   background-color: #333;
   height: 4vh;
@@ -75,6 +79,8 @@ Nav {
 }
 .SortBy {
   grid-area: SortBy;
+  display: flex;
+  flex-direction: row;
 }
 .sortByOptions {
   grid-area: sortByOptions;
@@ -257,4 +263,8 @@ form {
 .commentsMain {
   height: 90vh;
   overflow: scroll;
+}
+
+.loading {
+  color: #333;
 }
