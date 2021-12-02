@@ -1,4 +1,4 @@
-import { useContext, useState } from "react/cjs/react.development";
+import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { addNewReview } from "../utils/apis";
 
