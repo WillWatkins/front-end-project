@@ -1,43 +1,61 @@
-import { useEffect, useState } from "react";
-import { getUsers } from "../utils/apis";
-
-export const Filters = (setFilter, setSortBy) => {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    getUsers().then((users) => {
-      setUsers(users);
-    });
-  }, []);
-
+export const Filters = ({ setOrder, setSort_by }) => {
   return (
     <div className="sortFiltContainer">
       <h3 className="SortBy">Sort By:</h3>
       <ul className="sortByOptions">
         <li
           className="navItem"
-          onclick={() => {
-            setSortBy();
+          onClick={() => {
+            setSort_by("created_at");
           }}
         >
           Date
         </li>
-        <li className="navItem">Votes</li>
+        <li
+          className="navItem"
+          onClick={() => {
+            setSort_by("votes");
+          }}
+        >
+          Votes
+        </li>
+        <li
+          className="navItem"
+          onClick={() => {
+            setSort_by("owner");
+          }}
+        >
+          User
+        </li>
+        <li
+          className="navItem"
+          onClick={() => {
+            setSort_by("title");
+          }}
+        >
+          Review title
+        </li>
       </ul>
-      <h3 className="Filters">Filter by user:</h3>
+      <h3 className="Filters">Order By:</h3>
       <ul className="filterOptions">
-        {users.map((user) => {
-          return (
-            <li
-              className="navItem"
-              key={user.username}
-              onClick={() => {
-                setFilter(user.username);
-              }}
-            >
-              {user.username}
-            </li>
-          );
-        })}
+        <li
+          className="navItem"
+          key="ASC"
+          onClick={() => {
+            setOrder("ASC");
+          }}
+        >
+          ASC
+        </li>
+        <li
+          className="navItem"
+          key="DESC"
+          onClick={() => {
+            setOrder("DESC");
+          }}
+        >
+          DESC
+        </li>
       </ul>
     </div>
   );

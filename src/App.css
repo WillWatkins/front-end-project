@@ -100,7 +100,7 @@ Nav {
   overflow: scroll;
 }
 .reviewsList {
-  padding: 3px;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;

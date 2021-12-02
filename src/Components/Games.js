@@ -8,13 +8,13 @@ export const Games = ({ category, setReviewId }) => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [filter, setFilter] = useState();
-  const [sortBy, setSortBy] = useState();
-  console.log(sortBy);
+  const [order, setOrder] = useState();
+  const [sort_by, setSort_by] = useState();
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews(category, filter)
+    console.log("ORDER AND SORT BY:", order, sort_by);
+    getReviews(category, order, sort_by)
       .then((retrievedReviews) => {
         setIsLoading(false);
         setReviews(retrievedReviews);
@@ -23,12 +23,12 @@ export const Games = ({ category, setReviewId }) => {
         setIsLoading(false);
         console.log(err);
       });
-  }, [category, filter]);
+  }, [category, order, sort_by]);
 
   if (isLoading) return <p>Loading...</p>;
   return (
     <main className="gamesMain">
-      <Filters setFilter={setFilter} setSortBy={setSortBy} />
+      <Filters setOrder={setOrder} setSort_by={setSort_by} />
       <ul className="reviewsList">
         {reviews.map((review) => {
           return (
