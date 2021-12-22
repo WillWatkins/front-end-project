@@ -40,6 +40,8 @@ Video Tour showing the following features:
 - Filter by category
 - Apply filters based on dates, votes, user and post title
 - Sort by ascending or descending
+  ![Category-and-filters](https://github.com/WillWatkins/front-end-project/blob/main/gifs/catgegoryFilters.gif)
+
 - Select comments to see the comments for a specific review
 - Vote on the review/comment (Limited to one vote per user/render)
 - Add your own comment to the review
