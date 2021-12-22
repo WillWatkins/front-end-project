@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Node.js nc-games (Frontend project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project is a frontend user friendly application that allows a user to interact with data retrieved from an API in a friendly manner. The backend project repo can be found here [link](https://github.com/WillWatkins/JS-Backend-project). The backend repo is hosted here
 
-In the project directory, you can run:
+This frontend application is hosted [here](https://will-js-front-end-project.netlify.app/).
 
-### `npm start`
+# Technologies and Packages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The technologies and packages used for this project are listed below:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Node.js](https://nodejs.org/en/) v16.9.1
 
-### `npm test`
+### Project dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [axios](https://www.npmjs.com/package/axios) v0.24.0
+- [react](https://reactjs.org) v17.0.2
+- [react-dom](https://reactjs.org/docs/react-dom.html) v17.0.2
+- [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) v6.0.2
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you wish to play around with the code futher follow these steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To install this api and its dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  Ensure you have installed:
+    - Node.js
+2.  Fork this repo to your own github account and clone to your local machine. In the CLI insert the following:
 
-### `npm run eject`
+        git clone <your-github-forked-repo-url>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3.  Within the directory for this cloned file, install the dependencies by running the following in your CLI:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Video Tour showing the following features:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Filter by category
+- Apply filters based on dates, votes, user and post title
+- Sort by ascending or descending
+- Select comments to see the comments for a specific review
+- Vote on the review/comment (Limited to one vote per user/render)
+- Add your own comment to the review
+- Delete your own comments from a review
+- Add your own review

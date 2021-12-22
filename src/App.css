@@ -113,10 +113,10 @@ Nav {
 }
 .reviewItemCard {
   display: grid;
-  grid-template-rows: 25px 40px 150px 100px 20px;
-  grid-template-columns: 50% 50%;
+  grid-template-rows: 25px 45px 150px 100px 20px;
+  grid-template-columns: 40% 60%;
   grid-template-areas:
-    "Owner Owner"
+    "Owner TimeAndCategory"
     "Title Title"
     "ReviewImg ReviewImg"
     "ReviewTextContainer ReviewTextContainer"
@@ -135,6 +135,11 @@ Nav {
   border-radius: 10px;
   align-content: flex-start;
   font-size: large;
+}
+.TimeAndCategory {
+  grid-area: TimeAndCategory;
+  text-align: end;
+  font-size: medium;
 }
 .Title {
   grid-area: Title;

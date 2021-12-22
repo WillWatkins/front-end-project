@@ -27,6 +27,14 @@ export const Games = ({ category, setReviewId }) => {
       });
   }, [category, order, sort_by]);
 
+  function formatDate(time) {
+    let day = time.substring(8, 10);
+    let month = time.substring(5, 7);
+    let year = time.substring(0, 4);
+
+    return `${day}-${month}-${year}`;
+  }
+
   if (isLoading) return <p className="loading">Loading...</p>;
   if (err) return <p className="loading">{err}</p>;
   return (
@@ -37,6 +45,9 @@ export const Games = ({ category, setReviewId }) => {
           return (
             <li key={review.review_id} className="reviewItemCard">
               <h4 className="Owner">{review.owner}</h4>
+              <h3 className="TimeAndCategory">
+                {`${review.category}  ${formatDate(review.created_at)}`}
+              </h3>
               <h3 className="Title">{review.title}</h3>
               <img
                 src={review.review_img_url}
