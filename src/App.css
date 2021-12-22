@@ -190,6 +190,16 @@ Nav {
   grid-area: DownVote;
   padding: 0px 5px;
 }
+.UpVoteActive {
+  /* grid-area: Vote; */
+  color: rgb(8, 233, 8);
+  padding: 0px 5px;
+}
+.DownVoteActive {
+  /* grid-area: DownVote; */
+  color: red;
+  padding: 0px 5px;
+}
 
 /* COMMENTS */
 .Comments {
