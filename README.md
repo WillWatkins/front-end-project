@@ -47,7 +47,8 @@ Video Tour showing the following features:
 - Vote on the review/comment (Limited to one vote per user/render)
 - Add your own comment to the review
 - Delete your own comments from a review
-  ![comments-demonstration](https://github.com/WillWatkins/front-end-project/blob/main/gifs/comments.gif)
+
+![comments-demonstration](https://github.com/WillWatkins/front-end-project/blob/main/gifs/comments.gif)
 
 - Add your own review
 
