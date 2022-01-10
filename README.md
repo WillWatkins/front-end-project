@@ -4,7 +4,7 @@
 
 This project is a frontend user friendly application that allows a user to interact with data retrieved from an API in a friendly manner. The backend project repo can be found here [link](https://github.com/WillWatkins/JS-Backend-project). The backend repo is hosted here
 
-This frontend application is hosted [here](https://will-js-front-end-project.netlify.app/).
+This frontend application is hosted [here](https://will-nc-games.netlify.app).
 
 # Technologies and Packages
 
